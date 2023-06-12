@@ -7,6 +7,7 @@ Sync-One2 v2 Firmware v2.2.4 or above required for all commands to operate corre
 Dependant on PySerial 
 
 Version 1.0.1   Fix an error in calibrate
+Version 1.0.2   Fix an error in Custom Splsh 2 command
 
 Copyright (c) 2022 Harkwood Services Ltd
 
@@ -186,7 +187,7 @@ class SyncOne2:
             Bool: True for OK, False for error
         """
         if self.__in_API:
-            reply = self.__commmand_and_reply(f'CUSTOM SPLASH 1 "{message}" ')
+            reply = self.__commmand_and_reply(f'CUSTOM SPLASH 2 "{message}" ')
             if "ERR" not in reply:
                 return (reply, True)
             else:
